@@ -25,6 +25,7 @@
   "dependencies": {
     "@raycast/api": "^1.103.10",
     "@raycast/utils": "^2.2.2",
+    "javascript-time-ago": "2.5.12",
     "rss-parser": "3.13.0"
   },
   "devDependencies": {

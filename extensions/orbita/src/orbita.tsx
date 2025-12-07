@@ -1,6 +1,7 @@
 import { Action, ActionPanel, Icon, List } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
 import { fetchOrbitaPosts } from "./get-rss";
+import { formatRelativeDate } from "./utils";
 
 export default function Command() {
   const { isLoading, data, error, revalidate } = useCachedPromise(async () => await fetchOrbitaPosts(), []);
@@ -31,6 +32,12 @@ export default function Command() {
             icon={Icon.Eye}
             title={post.title}
             subtitle={post.author || ""}
+            accessories={[
+              {
+                text: formatRelativeDate(post.pubDate),
+                icon: Icon.Clock,
+              },
+            ]}
             actions={
               <ActionPanel>
                 <Action.OpenInBrowser url={post.link} />
