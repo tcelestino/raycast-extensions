@@ -12,9 +12,3 @@ compiled_raycast_rust
 
 # misc
 .DS_Store
-
-
-# IA files
-.cursorrules/
-.claude/
-CLAUDE.md
